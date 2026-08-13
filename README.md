@@ -153,12 +153,16 @@ https://codecguide.com/
 
 <a id="10bpc"></a>
 # If RGB 10bpc unavailable, Choose YCbCr420 as an alternative
+
 ## Nvidia
 <img width="672" height="1040" alt="2026-08-12 23 53 08" src="https://github.com/user-attachments/assets/6216dfce-9570-4612-a11e-58b3c156537d" />
+
 ## Lav Video
 <img width="975" height="872" alt="2026-08-12 23 53 55" src="https://github.com/user-attachments/assets/c82fe754-9eb0-4bbb-a3fa-40e03865ef9a" />
+
 ## potplayer
 <img width="1076" height="937" alt="2026-08-12 23 54 47" src="https://github.com/user-attachments/assets/384cbc35-09f6-4247-b7ca-0beafeadc904" />
+
 ## TV
 <img width="960" height="1280" alt="photo_2026-08-12_23-52-20" src="https://github.com/user-attachments/assets/0244c779-3690-4518-b663-9447e3f02895" />
 
