@@ -1,41 +1,33 @@
 # Table of Contents
-
-
-
-
-
+[HEVC](#HEVC)
+[Dolby Vision](#dolbyVision)
+[opencode](#opencode)
+[potplayer](#potplayer)
+[MPC video renderer](#MPC)
+[K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
+[LAV filter(video, audio, splitter)](#lav)
 
 
 
 
 <a name="HEVC"></a>
 # HEVC
+https://apps.microsoft.com/detail/9N4WGH0Z6VHQ?hl=en-us&gl=HK&ocid=pdpshare
+
 <a id="dolbyVision"></a>
 # Dolby Vision
+https://apps.microsoft.com/detail/9PLTG1LWPHLF?hl=en-us&gl=HK&ocid=pdpshare
+
 <a id="opencode"></a>
 # opencode
+https://github.com/sst/opencode
+
 <a id="potplayer"></a>
 # potplayer
+https://potplayer.tv
+
 <a id="MPC"></a>
 # MPC video renderer
-<a id="lav"></a>
-# LAV filter(video, audio, splitter)
-<a id="kLiteCodec"></a>
-# K-Lite Codec Pack(DTS audio decoder)
-
-
-
----
-
-[HEVC](#HEVC)
-https://apps.microsoft.com/detail/9N4WGH0Z6VHQ?hl=en-us&gl=HK&ocid=pdpshare
-- [Dolby Vision](#dolbyVision)
-https://apps.microsoft.com/detail/9PLTG1LWPHLF?hl=en-us&gl=HK&ocid=pdpshare
-- [opencode](#opencode)
-https://github.com/sst/opencode
-- [potplayer](#potplayer)
-https://potplayer.tv
-- [MPC video renderer](#MPC)
 https://github.com/Aleksoid1978/VideoRenderer
 <img width="1091" height="954" alt="image" src="https://github.com/user-attachments/assets/6561f8b3-3cd9-40e7-8093-7cf50c530f4e" />
 
@@ -136,11 +128,36 @@ https://github.com/Aleksoid1978/VideoRenderer
 缺點：切換螢幕時可能會有短暫黑屏或重新載入。
 建議：有多螢幕的話建議開啟；單螢幕可開可關。
 
-[LAV filter(video, audio, splitter)](#lav)
+
+
+<a id="lav"></a>
+# LAV filter(video, audio, splitter)
+
+
+
+# K-Lite Codec Pack(DTS audio decoder)
+
+
+
+---
+
+[HEVC](#HEVC)
+
+- [Dolby Vision](#dolbyVision)
+
+- [opencode](#opencode)
+
+- [potplayer](#potplayer)
+
+- [MPC video renderer](#MPC)
+
+
+# [LAV filter(video, audio, splitter)](#lav)
 https://github.com/nevcairiel/lavfilters/releases
 
 
-[K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
+
+# [K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
 https://codecguide.com/
 <img width="1952" height="932" alt="image" src="https://github.com/user-attachments/assets/c385245d-5da9-41b4-9c26-25f76a4bb889" />
 
