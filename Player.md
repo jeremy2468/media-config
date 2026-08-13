@@ -1,26 +1,40 @@
+Playback 4K HDR, Dolby Vision, 10 bits per color on Window Setup Guide
+
 # Table of Contents
 - [Window11](#Window11)
-- [HEVC](#HEVC)
-- [Dolby Vision](#dolbyVision)
+- [HEVC Video Extensions](#HEVC)
+- [Dolby Vision Extensions](#dolbyVision)
 - [opencode](#opencode)
 - [potplayer](#potplayer)
+  - [Practice](#potplayer_practice)
+  - [OSD](#potplayer_osd)
 - [MPC video renderer](#MPC)
+  - [Deinterlacing](#Deinterlacing)
+  - [Shader Video Processor](#ShaderVideoProcessor)
+    - [Chroma Upsampling](#ChromaUpsampling)
+  - [Use the "Upscaling" method to reducing the frame to 50%](#Upscaling50)
+  - [dithering](#dithering)
+  - [SwapEffect](#SwapEffect)
+    - [exclusive fullscreen](#SwapEffect_1)
+    - [Wait for VBlank before Present](#SwapEffect_2)
+    - [Adjust the frame presentation time](#SwapEffect_3)
+    - [Reinitialize device when changing display](#SwapEffect_4)
 - [LAV filter(video, audio, splitter)](#lav)
 - [K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
 - [Nvidia setup](#nvidia)
 - [10bpc](#10bpc)
 ---
-<a name="Window11"></a>
+<a id="Window11"></a>
 # Window11
 <img width="1847" height="1738" alt="image" src="https://github.com/user-attachments/assets/7f723c0e-4c87-4f01-a002-d3540f5cceaa" />
 <img width="1424" height="1449" alt="image" src="https://github.com/user-attachments/assets/71fddc80-7f8b-48d4-8878-9b8c2901fb59" />
 
-<a name="HEVC"></a>
-# HEVC
+<a id="HEVC"></a>
+# HEVC Video Extensions
 https://apps.microsoft.com/detail/9N4WGH0Z6VHQ?hl=en-us&gl=HK&ocid=pdpshare
 
 <a id="dolbyVision"></a>
-# Dolby Vision
+# Dolby Vision Extensions
 https://apps.microsoft.com/detail/9PLTG1LWPHLF?hl=en-us&gl=HK&ocid=pdpshare
 
 <a id="opencode"></a>
@@ -31,11 +45,23 @@ https://github.com/sst/opencode
 # potplayer
 https://potplayer.tv
 
+<a id="potplayer_practice"></a>
+## Practice
+1. Direct start potplayer (without opening video)
+2. Drag potplayer to target monitor
+3. Drag target video to potplayer
+
+<a id="potplayer_osd"></a>
+## OSD (tab)
+<img width="500" height="271.67" alt="image" src="https://github.com/user-attachments/assets/2b06e085-6263-44d3-94ea-ba6eb8d264e0" />
+
+
 <a id="MPC"></a>
 # MPC video renderer
 https://github.com/Aleksoid1978/VideoRenderer
 <img width="1091" height="954" alt="image" src="https://github.com/user-attachments/assets/6561f8b3-3cd9-40e7-8093-7cf50c530f4e" />
 
+<a id="Deinterlacing"></a>
 ## Deinterlacing
 交錯影片（Interlaced，常見於舊電視節目、DVD、1080i）一幀其實是由兩個半幀（Field）組成的
 | 選項 / 狀態 | 結果說明 |
@@ -43,9 +69,11 @@ https://github.com/Aleksoid1978/VideoRenderer
 | **關閉** | 輸出原本的幀率（例如 25fps / 30fps）。把兩個半幀合成一幀，畫面比較「靜態」。 |
 | **開啟** | 幀率加倍（變成 50fps / 60fps）。把每一個半幀都當成完整一幀來輸出，動作會更流暢。 |
 
+<a id="ShaderVideoProcessor"></a>
 ## Shader Video Processor（著色器視訊處理器）
 統方式用較舊的硬體加速路徑處理影像, Shader Video Processor用 GPU 著色器（Pixel Shader） 來處理影像
 
+<a id="ChromaUpsampling"></a>
 ### Chroma Upsampling
 大多數影片（尤其是 1080p、4K）都是用 4:2:0 格式儲存：
 亮度（Luma）：完整解析度
@@ -68,7 +96,7 @@ https://github.com/Aleksoid1978/VideoRenderer
 | **Bilinear** | 普通 | 簡單雙線性插值，顏色比較柔和、偏模糊 | 可接受 |
 | **Catmull-Rom** | 最好 | 屬於高品質的 Bicubic 演算法，邊緣較清晰 | 推薦選這個 |
 
-
+<a id="Upscaling50"></a>
 ## Use the "Upscaling" method to reducing the frame to 50%
 正常情況下：
 放大畫面 → 用 Upscaling 演算法
@@ -84,14 +112,17 @@ https://github.com/Aleksoid1978/VideoRenderer
 | **顯卡效能較低、想省資源** | 關閉 |
 | **不確定** | 先開啟試試看 |
 
+<a id="dithering"></a>
 ## dithering
 當影片的色深（例如 10-bit）要輸出到你的螢幕（通常是 8-bit）時，會發生位元深度降低。如果直接截斷，容易出現色帶（Banding），也就是原本平滑的漸層變成一條一條的色塊，看起來很不自然（尤其在天空、暗部、陰影處很明顯）。Dithering（抖動） 就是在降低色深時，加入細微的雜訊來「打散」這些色帶，讓漸層看起來更平滑自然。
 在 4K 螢幕 + 10-bit 影片的情況下，開啟 Dithering 幾乎都是有幫助的。
 效能消耗非常小，幾乎感覺不到。
 大部分高階渲染器（MPC Video Renderer、madVR）預設都會建議開啟。
 
+<a id="SwapEffect"></a>
 ## Swap Effect (Flip 或 Discard)
 控制畫面用什麼方式送到螢幕（Flip 或 Discard），主要影響穩定性和效能，不影響畫質。
+<a id="SwapEffect_1"></a>
 1. Use exclusive fullscreen（使用獨占全螢幕）
 
 作用：進入全螢幕時，使用「獨占模式」（Exclusive Fullscreen），而不是無邊框視窗模式。
@@ -103,7 +134,7 @@ https://github.com/Aleksoid1978/VideoRenderer
 缺點：切換全螢幕時可能會閃一下，或與某些桌面效果衝突。
 建議：一般建議開啟。
 
-
+<a id="SwapEffect_2"></a>
 2. Wait for VBlank before Present（呈現前等待垂直空白區間）
 
 作用：在把畫面送到螢幕之前，先等到螢幕的垂直同步訊號（VBlank）再送出。
@@ -114,14 +145,14 @@ https://github.com/Aleksoid1978/VideoRenderer
 缺點：可能會稍微增加一點延遲。
 建議：建議開啟，尤其是你有開 VSync 或想追求穩定流暢時。
 
-
+<a id="SwapEffect_3"></a>
 3. Adjust the frame presentation time（調整幀呈現時間）
 
 作用：微調每一幀送到螢幕的時間，讓它更接近理想的顯示時間點。
 好處：減少抖動、卡頓，讓播放更順。
 建議：建議開啟。
 
-
+<a id="SwapEffect_4"></a>
 4. Reinitialize device when changing display（更換顯示器時重新初始化裝置）
 
 作用：當你把視窗拖到另一個螢幕，或切換主要顯示器時，會重新初始化渲染裝置。
@@ -138,6 +169,9 @@ https://github.com/Aleksoid1978/VideoRenderer
 # LAV filter(video, audio, splitter)
 https://github.com/nevcairiel/lavfilters/releases
 
+## with potplayer
+<img width="2119" height="927" alt="image" src="https://github.com/user-attachments/assets/c72bdf4e-4ee8-443c-8cb1-0496e368c035" />
+<img width="1936" height="929" alt="image" src="https://github.com/user-attachments/assets/f12eda15-b31b-487a-a86c-c350cc0faf3c" />
 
 <a id="kLiteCodec"></a>
 # K-Lite Codec Pack(DTS audio decoder)
@@ -165,6 +199,7 @@ https://codecguide.com/
 
 ## TV
 <img width="960" height="1280" alt="photo_2026-08-12_23-52-20" src="https://github.com/user-attachments/assets/0244c779-3690-4518-b663-9447e3f02895" />
+
 
 
 
