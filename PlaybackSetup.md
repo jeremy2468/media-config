@@ -6,6 +6,7 @@
 - [Dolby Vision Extensions](#dolbyVision)
 - [opencode](#opencode)
 - [potplayer](#potplayer)
+  - [Audio](#potplayer_audio)
   - [Practice](#potplayer_practice)
   - [OSD](#potplayer_osd)
 - [MPC video renderer](#MPC)
@@ -20,6 +21,9 @@
     - [Adjust the frame presentation time](#SwapEffect_3)
     - [Reinitialize device when changing display](#SwapEffect_4)
 - [LAV filter(video, audio, splitter)](#lav)
+  - with potplayer(#lav_1)
+  - lav video(#lav_2)
+  - lav audio(#lav_3)
 - [K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
 - [Nvidia setup](#nvidia)
 - [10bpc](#10bpc)
@@ -45,14 +49,19 @@ https://github.com/sst/opencode
 # potplayer
 https://potplayer.tv
 
+<a id="potplayer_audio"></a>
+## potplayer- Audio
+<img width="1057" height="929" alt="image" src="https://github.com/user-attachments/assets/bade07c0-f688-4f2c-bac9-c315d7d09fc5" />
+
+
 <a id="potplayer_practice"></a>
-## Practice
+## potplayer- Practice
 1. Direct start potplayer (without opening video)
 2. Drag potplayer to target monitor
 3. Drag target video to potplayer
 
 <a id="potplayer_osd"></a>
-## OSD (tab)
+## potplayer- OSD (tab)
 <img width="500" height="271.67" alt="image" src="https://github.com/user-attachments/assets/2b06e085-6263-44d3-94ea-ba6eb8d264e0" />
 
 
@@ -169,9 +178,20 @@ https://github.com/Aleksoid1978/VideoRenderer
 # LAV filter(video, audio, splitter)
 https://github.com/nevcairiel/lavfilters/releases
 
+<a id="lav_1"></a>
 ## with potplayer
 <img width="2119" height="927" alt="image" src="https://github.com/user-attachments/assets/c72bdf4e-4ee8-443c-8cb1-0496e368c035" />
 <img width="1936" height="929" alt="image" src="https://github.com/user-attachments/assets/f12eda15-b31b-487a-a86c-c350cc0faf3c" />
+
+<a id="lav_2"></a>
+## lav video
+<img width="1086" height="1034" alt="image" src="https://github.com/user-attachments/assets/a74aa292-6ea3-4415-80ed-6f972b948bb2" />
+
+<a id="lav_2"></a>
+## lav audio
+<img width="966" height="902" alt="image" src="https://github.com/user-attachments/assets/f94c13e3-1ef0-4024-9e1d-17f9a0524567" />
+<img width="940" height="871" alt="image" src="https://github.com/user-attachments/assets/30afbbfa-9757-40af-85f0-613ed19972bd" />
+
 
 <a id="kLiteCodec"></a>
 # K-Lite Codec Pack(DTS audio decoder)
