@@ -6,6 +6,7 @@
 - [Dolby Vision Extensions](#dolbyVision)
 - [opencode](#opencode)
 - [potplayer](#potplayer)
+  - [Color Space](#potplayer_colorspace)
   - [Audio](#potplayer_audio)
   - [Practice](#potplayer_practice)
   - [OSD](#potplayer_osd)
@@ -26,7 +27,14 @@
   - [lav audio](#lav_3)
 - [K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
 - [Nvidia setup](#nvidia)
-- [10bpc](#10bpc)
+- [tv](#tv)
+- [Output Color format and depth](#ocfad)
+	- [Output Color Depth](#ocfad_1)
+	- [Color Range Full vs Limited](#ocfad_2)
+	- [YCbCr 4:2:0 vs RGB](#ocfad_3)
+	- [Setup](#ocfad_4)
+
+
 ---
 <a id="Window11"></a>
 # Window11
@@ -48,6 +56,10 @@ https://github.com/sst/opencode
 <a id="potplayer"></a>
 # potplayer
 https://potplayer.tv
+
+<a id="potplayer_colorspace"></a>
+## potplayer- Color Space
+<img width="1076" height="937" alt="2026-08-12 23 54 47" src="https://github.com/user-attachments/assets/384cbc35-09f6-4247-b7ca-0beafeadc904" />
 
 <a id="potplayer_audio"></a>
 ## potplayer- Audio
@@ -185,7 +197,7 @@ https://github.com/nevcairiel/lavfilters/releases
 
 <a id="lav_2"></a>
 ## lav video
-<img width="1086" height="1034" alt="image" src="https://github.com/user-attachments/assets/a74aa292-6ea3-4415-80ed-6f972b948bb2" />
+<img width="975" height="872" alt="2026-08-12 23 53 55" src="https://github.com/user-attachments/assets/c82fe754-9eb0-4bbb-a3fa-40e03865ef9a" />
 
 <a id="lav_3"></a>
 ## lav audio
@@ -201,24 +213,72 @@ https://codecguide.com/
 
 <a id="nvidia"></a>
 # Nvidia Setup
-<img width="1338" height="1211" alt="image" src="https://github.com/user-attachments/assets/60f0e3c6-b15f-44b7-b8ec-b273c10f496a" />
-<img width="972" height="661" alt="image" src="https://github.com/user-attachments/assets/8d4051c7-249d-4dcc-9398-c408644814e1" />
+<img width="600" height="543.05" alt="image" src="https://github.com/user-attachments/assets/60f0e3c6-b15f-44b7-b8ec-b273c10f496a" />
+<img width="600" height="408.02" alt="image" src="https://github.com/user-attachments/assets/8d4051c7-249d-4dcc-9398-c408644814e1" />
+<img width="500" height="773.81" alt="2026-08-12 23 53 08" src="https://github.com/user-attachments/assets/6216dfce-9570-4612-a11e-58b3c156537d" />
+
+<a id="tv"></a>
+# TV
+<img width="300" height="400" alt="photo_2026-08-12_23-52-20" src="https://github.com/user-attachments/assets/0244c779-3690-4518-b663-9447e3f02895" />
+
+<a id="ocfad"></a>
+# Output Color format and Depth
+
+最初遇到的問題是Nvidia config -> Tv output沒有提供10bpc選項，後來發現選Output color format選YCbCr420，10bpc選項才出現了。
+
+<a id="ocfad_1"></a>
+## Output Color Depth
+| 選項 | 意思 | 顏色數量（約） | 主要用途 |
+| :--- | :--- | :--- | :--- |
+| 8 bpc | 每通道 8-bit | 1,677 萬色 | 一般 SDR 內容 |
+| 10 bpc | 每通道 10-bit | 10.7 億色 | HDR / Dolby Vision（建議） |
+| 12 bpc | 每通道 12-bit | 687 億色 | 專業用途，消費級幾乎用不到 |
+
+- HDR 內容漸層更平滑
+- 暗位、亮位過渡較自然
+- 減少「一格一格」的色帶現象
+
+<a id="ocfad_2"></a>
+## Color Range Full vs Limited
+其實電影電視影片HDR dolby vision等內容本身就是用 Limited Range 編碼的. full range 主要適合 PC 桌面 / 遊戲，唔係為影片設計。
+
+Full Range 和 Limited Range 對「一幀的資料量」沒有任何差別。
+
+Range 只影響數值怎麼解釋（黑和白對應邊個數字），不會改變儲存或傳輸時用幾多 bit。
 
 
-<a id="10bpc"></a>
-# If RGB 10bpc unavailable, Choose YCbCr420 as an alternative
+<img width="600" height="831.86" alt="image" src="https://github.com/user-attachments/assets/d70c3795-2e5b-4fcf-8750-921452775599" />
 
-## Nvidia
-<img width="672" height="1040" alt="2026-08-12 23 53 08" src="https://github.com/user-attachments/assets/6216dfce-9570-4612-a11e-58b3c156537d" />
+<a id="ocfad_3"></a>
+## YCbCr 4:2:0 vs RGB
+其實電影電視影片HDR dolby vision等內容本身就是用 Limited Range 編碼的. full range 主要適合 PC 桌面 / 遊戲，唔係為影片設計
 
-## Lav Video
-<img width="975" height="872" alt="2026-08-12 23 53 55" src="https://github.com/user-attachments/assets/c82fe754-9eb0-4bbb-a3fa-40e03865ef9a" />
+Full Range 和 Limited Range 對「一幀的資料量」沒有任何差別。
 
-## potplayer
-<img width="1076" height="937" alt="2026-08-12 23 54 47" src="https://github.com/user-attachments/assets/384cbc35-09f6-4247-b7ca-0beafeadc904" />
+Range 只影響數值怎麼解釋（黑和白對應邊個數字），不會改變儲存或傳輸時用幾多 bit。
 
-## TV
-<img width="960" height="1280" alt="photo_2026-08-12_23-52-20" src="https://github.com/user-attachments/assets/0244c779-3690-4518-b663-9447e3f02895" />
+YCbCr 4:2:0 會把顏色資訊（Cb、Cr）在水平和垂直方向都砍掉一半，只保留完整的亮度（Y）。
+
+人眼對亮度比較敏感，對顏色比較不敏感，所以看影片時通常察覺不到差別。但電腦桌面有大量銳利的文字和圖形，顏色解析度一低，文字變模糊，顏色邊界不夠銳利
+
+<a id="ocfad_4"></a>
+## Setup
+
+<b> Nvidia </br>
+<img width="300" height="464.29" alt="2026-08-12 23 53 08" src="https://github.com/user-attachments/assets/6216dfce-9570-4612-a11e-58b3c156537d" />
+
+<b> Lav Video </br>
+<img width="500" height="447.18" alt="2026-08-12 23 53 55" src="https://github.com/user-attachments/assets/c82fe754-9eb0-4bbb-a3fa-40e03865ef9a" />
+
+<b> potplayer </br>
+<img width="500" height="435.41" alt="2026-08-12 23 54 47" src="https://github.com/user-attachments/assets/384cbc35-09f6-4247-b7ca-0beafeadc904" />
+
+<b> TV </br>
+<img width="300" height="400" alt="photo_2026-08-12_23-52-20" src="https://github.com/user-attachments/assets/0244c779-3690-4518-b663-9447e3f02895" />
+
+
+
+
 
 
 
