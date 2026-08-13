@@ -1,14 +1,13 @@
 # Table of Contents
-[HEVC](#HEVC)
-[Dolby Vision](#dolbyVision)
-[opencode](#opencode)
-[potplayer](#potplayer)
-[MPC video renderer](#MPC)
-[K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
-[LAV filter(video, audio, splitter)](#lav)
+- [HEVC](#HEVC)
+- [Dolby Vision](#dolbyVision)
+- [opencode](#opencode)
+- [potplayer](#potplayer)
+- [MPC video renderer](#MPC)
+- [LAV filter(video, audio, splitter)](#lav)
+- [K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
 
-
-
+---
 
 <a name="HEVC"></a>
 # HEVC
@@ -132,34 +131,23 @@ https://github.com/Aleksoid1978/VideoRenderer
 
 <a id="lav"></a>
 # LAV filter(video, audio, splitter)
-
-
-
-# K-Lite Codec Pack(DTS audio decoder)
-
-
-
----
-
-[HEVC](#HEVC)
-
-- [Dolby Vision](#dolbyVision)
-
-- [opencode](#opencode)
-
-- [potplayer](#potplayer)
-
-- [MPC video renderer](#MPC)
-
-
-# [LAV filter(video, audio, splitter)](#lav)
 https://github.com/nevcairiel/lavfilters/releases
 
 
-
-# [K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
+<a id="kLiteCodec"></a>
+# K-Lite Codec Pack(DTS audio decoder)
 https://codecguide.com/
 <img width="1952" height="932" alt="image" src="https://github.com/user-attachments/assets/c385245d-5da9-41b4-9c26-25f76a4bb889" />
+
+
+
+
+
+
+
+
+
+
 
 
 
