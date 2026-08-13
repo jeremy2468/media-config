@@ -1,4 +1,4 @@
-Playback 4K HDR, Dolby Vision, 10 bits per color on Window Setup Guide
+# Setup Guide - How to Playback 4K HDR, Dolby Vision, 10 bits per color on Window OS
 
 # Table of Contents
 - [Window11](#Window11)
