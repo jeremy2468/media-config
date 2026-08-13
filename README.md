@@ -1,4 +1,5 @@
 # Table of Contents
+- Window11(#Window11)
 - [HEVC](#HEVC)
 - [Dolby Vision](#dolbyVision)
 - [opencode](#opencode)
@@ -6,8 +7,13 @@
 - [MPC video renderer](#MPC)
 - [LAV filter(video, audio, splitter)](#lav)
 - [K-Lite Codec Pack(DTS audio decoder)](#kLiteCodec)
-
+- [Nvidia setup](#nvidia)
+- [10bpc](#10bpc)
 ---
+<a name="Window11"></a>
+# Window11
+<img width="1847" height="1738" alt="image" src="https://github.com/user-attachments/assets/7f723c0e-4c87-4f01-a002-d3540f5cceaa" />
+<img width="1424" height="1449" alt="image" src="https://github.com/user-attachments/assets/71fddc80-7f8b-48d4-8878-9b8c2901fb59" />
 
 <a name="HEVC"></a>
 # HEVC
@@ -30,7 +36,7 @@ https://potplayer.tv
 https://github.com/Aleksoid1978/VideoRenderer
 <img width="1091" height="954" alt="image" src="https://github.com/user-attachments/assets/6561f8b3-3cd9-40e7-8093-7cf50c530f4e" />
 
-##Deinterlacing
+## Deinterlacing
 交錯影片（Interlaced，常見於舊電視節目、DVD、1080i）一幀其實是由兩個半幀（Field）組成的
 | 選項 / 狀態 | 結果說明 |
 | :--- | :--- |
@@ -65,11 +71,10 @@ https://github.com/Aleksoid1978/VideoRenderer
 
 ## Use the "Upscaling" method to reducing the frame to 50%
 正常情況下：
-
 放大畫面 → 用 Upscaling 演算法
 縮小畫面 → 用 Downscaling 演算法
 
-但有些渲染器（包含 MPC Video Renderer）會提供這個選項：
+但有些渲染器（包含 MPC Video Renderer）會提供這個選項：\
 當縮小幅度很大（例如縮小到原尺寸的 50% 或以下）時，不要用 Downscaling 演算法，而是改用你設定的 Upscaling 演算法來處理。
 為什麼會有這個選項？
 某些高品質的 Upscaling 演算法（例如 Lanczos、Jinc）在「先放大再縮小」或特定比例縮小時，效果有時會比專門的 Downscaling 演算法更好，細節保留更多、邊緣更乾淨。
@@ -85,7 +90,7 @@ https://github.com/Aleksoid1978/VideoRenderer
 效能消耗非常小，幾乎感覺不到。
 大部分高階渲染器（MPC Video Renderer、madVR）預設都會建議開啟。
 
-# Swap Effect (Flip 或 Discard)
+## Swap Effect (Flip 或 Discard)
 控制畫面用什麼方式送到螢幕（Flip 或 Discard），主要影響穩定性和效能，不影響畫質。
 1. Use exclusive fullscreen（使用獨占全螢幕）
 
@@ -140,14 +145,22 @@ https://codecguide.com/
 <img width="1952" height="932" alt="image" src="https://github.com/user-attachments/assets/c385245d-5da9-41b4-9c26-25f76a4bb889" />
 
 
+<a id="nvidia"></a>
+# Nvidia Setup
+<img width="1338" height="1211" alt="image" src="https://github.com/user-attachments/assets/60f0e3c6-b15f-44b7-b8ec-b273c10f496a" />
+<img width="972" height="661" alt="image" src="https://github.com/user-attachments/assets/8d4051c7-249d-4dcc-9398-c408644814e1" />
 
 
-
-
-
-
-
-
+<a id="10bpc"></a>
+# If RGB 10bpc unavailable, Choose YCbCr420 as an alternative
+## Nvidia
+<img width="672" height="1040" alt="2026-08-12 23 53 08" src="https://github.com/user-attachments/assets/6216dfce-9570-4612-a11e-58b3c156537d" />
+## Lav Video
+<img width="975" height="872" alt="2026-08-12 23 53 55" src="https://github.com/user-attachments/assets/c82fe754-9eb0-4bbb-a3fa-40e03865ef9a" />
+## potplayer
+<img width="1076" height="937" alt="2026-08-12 23 54 47" src="https://github.com/user-attachments/assets/384cbc35-09f6-4247-b7ca-0beafeadc904" />
+## TV
+<img width="960" height="1280" alt="photo_2026-08-12_23-52-20" src="https://github.com/user-attachments/assets/0244c779-3690-4518-b663-9447e3f02895" />
 
 
 
