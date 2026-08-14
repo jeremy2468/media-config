@@ -224,7 +224,7 @@ https://codecguide.com/
 <a id="ocfad"></a>
 # Output Color format and Depth
 
-最初遇到的問題是Nvidia config -> Tv output沒有提供10bpc選項，後來發現選Output color format選YCbCr420，10bpc選項才出現了。
+最初遇到的問題是Nvidia config -> Tv output沒有提供10bpc選項，後來Output color format選YCbCr420，range選Limited，10bpc選項才出現了。
 
 <a id="ocfad_1"></a>
 ## Output Color Depth
@@ -263,12 +263,12 @@ YCbCr 4:2:0 會把顏色資訊（Cb、Cr）在水平和垂直方向都砍掉一�
 
 <a id="ocfad_4"></a>
 ## Setup
-
+先試直接選10bpc, 不行就把output dynamic range改成limited再試。再不行才把format改成YCbCr420
 <b> Nvidia </br>
 <img width="300" height="464.29" alt="2026-08-12 23 53 08" src="https://github.com/user-attachments/assets/6216dfce-9570-4612-a11e-58b3c156537d" />
 
 <b> Lav Video </br>
-<img width="500" height="447.18" alt="2026-08-12 23 53 55" src="https://github.com/user-attachments/assets/c82fe754-9eb0-4bbb-a3fa-40e03865ef9a" />
+<img width="975" height="872" alt="image" src="https://github.com/user-attachments/assets/9d3b921e-f124-44cc-b182-135aa38243b5" />
 
 <b> potplayer </br>
 <img width="500" height="435.41" alt="2026-08-12 23 54 47" src="https://github.com/user-attachments/assets/384cbc35-09f6-4247-b7ca-0beafeadc904" />
