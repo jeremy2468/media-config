@@ -51,7 +51,7 @@ https://apps.microsoft.com/detail/9PLTG1LWPHLF?hl=en-us&gl=HK&ocid=pdpshare
 
 <a id="opencode"></a>
 # opencode
-https://github.com/sst/opencode
+[https://github.com/sst/opencode](https://potplayer.org/en/opencodec.html)
 
 <a id="potplayer"></a>
 # potplayer
