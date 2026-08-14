@@ -32,7 +32,7 @@
 	- [Output Color Depth](#ocfad_1)
 	- [Color Range Full vs Limited](#ocfad_2)
 	- [YCbCr 4:2:0 vs RGB](#ocfad_3)
-	- [Setup](#ocfad_4)
+	- [Conclusion](#ocfad_4)
 
 
 ---
@@ -262,7 +262,7 @@ YCbCr 4:2:0 會把顏色資訊（Cb、Cr）在水平和垂直方向都砍掉一�
 人眼對亮度比較敏感，對顏色比較不敏感，所以看影片時通常察覺不到差別。但電腦桌面有大量銳利的文字和圖形，顏色解析度一低，文字變模糊，顏色邊界不夠銳利
 
 <a id="ocfad_4"></a>
-## Setup
+## Conclusion
 先試直接選10bpc, 不行就把output dynamic range改成limited再試。再不行才把format改成YCbCr420
 <b> Nvidia </br>
 <img width="300" height="464.29" alt="2026-08-12 23 53 08" src="https://github.com/user-attachments/assets/6216dfce-9570-4612-a11e-58b3c156537d" />
