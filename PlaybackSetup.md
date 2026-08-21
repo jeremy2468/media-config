@@ -33,6 +33,8 @@
 	- [Color Range Full vs Limited](#ocfad_2)
 	- [YCbCr 4:2:0 vs RGB](#ocfad_3)
 	- [Conclusion](#ocfad_4)
+ - [Verify](#verify)
+ 	- [CyberLink Blu-ray Advisor](#verify1)
 
 
 ---
@@ -276,10 +278,15 @@ YCbCr 4:2:0 會把顏色資訊（Cb、Cr）在水平和垂直方向都砍掉一�
 <b> TV </br>
 <img width="300" height="400" alt="photo_2026-08-12_23-52-20" src="https://github.com/user-attachments/assets/0244c779-3690-4518-b663-9447e3f02895" />
 
+<a id="verify"></a>
+# Verify
 
-
-
-
+<a id="verify1"></a>
+# CyberLink Blu-ray Advisor
+check pc and monitor
+https://www.cyberlink.com/prog/bd-support/diagnosis.do?srsltid=AfmBOooymqYR2e2DaTtM29bGD0iedN631_eTFZSBNdsFwEzzPolHHRDT
+drag window target monitor to run the test
+<img width="451" height="498" alt="image" src="https://github.com/user-attachments/assets/8b82f9ba-76bc-42d2-9112-35fe404459c1" />
 
 
 
